@@ -20,13 +20,15 @@ sources:
     type: "web post"
     location: "encoded sign data and decoding command"
     relationship: "adapts"
-    author_endorsement: "not-contacted"
+    author_endorsement: "no-response"
+    author_contact_method: "Public post on X (Twitter)."
   - title: "Construction credits"
     authors: ["Levent Alpöge"]
     id: "https://x.com/__alpoge__/status/2087504790435840207"
     type: "web post"
     relationship: "background"
-    author_endorsement: "not-contacted"
+    author_endorsement: "no-response"
+    author_contact_method: "Public post on X (Twitter)."
 
 classification:
   arxiv: ["math.CO"]
@@ -45,6 +47,11 @@ status:
       sorry_count: 0
       axioms: ["propext", "Quot.sound", "Classical.choice"]
       comparator_config: "config.json"
+      literature_dependencies: []
+    - declaration: "Hadamard.exists_hadamard_668"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
       literature_dependencies: []
 
 automation:
@@ -72,7 +79,7 @@ automation:
       models: ["gpt-5.6-sol"]
       framework: "OpenAI Codex"
       tool_setup: >-
-        A separate adversarial-review session audited the source, axioms, 
+        A separate adversarial-review session audited the source, axioms,
         Lean builds, and Comparator packaging.
   spend_usd: "Subscription-based usage; exact spend was not recorded."
   notes: >-
