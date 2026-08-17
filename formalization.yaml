@@ -11,7 +11,7 @@ repository:
   role: "thin-wrapper"
   substantive_formalization:
     id: "https://github.com/Paul-Lez/formal-conjectures"
-    revision: "3f8f9c55d891f112f61dd44684836457f09a81fd"
+    revision: "1721605c41f1bad11f592c2606618c539c43dc1f"
 
 sources:
   - title: "Order-668 construction"
