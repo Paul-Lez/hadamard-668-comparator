@@ -1,0 +1,100 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Hadamard 668 Comparator formalization"
+  authors: ["Paul Lezeau"]
+  responsible_maintainers: ["Paul Lezeau"]
+  license: "Apache-2.0"
+
+repository:
+  role: "thin-wrapper"
+  substantive_formalization:
+    id: "https://github.com/Paul-Lez/formal-conjectures"
+    revision: "3f8f9c55d891f112f61dd44684836457f09a81fd"
+
+sources:
+  - title: "Order-668 construction"
+    authors: ["Levent Alpöge", "Philippe Voinov", "Saul Reynolds-Haertle", "Claude"]
+    id: "https://x.com/__alpoge__/status/2087504785952182273"
+    type: "web post"
+    location: "encoded sign data and decoding command"
+    relationship: "adapts"
+    author_endorsement: "not-contacted"
+  - title: "Construction credits"
+    authors: ["Levent Alpöge"]
+    id: "https://x.com/__alpoge__/status/2087504790435840207"
+    type: "web post"
+    relationship: "background"
+    author_endorsement: "not-contacted"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05B20"]
+
+status:
+  scope: >-
+    Defines an explicit order-668 sign matrix, proves it is Hadamard, and packages
+    the result as a Comparator challenge.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "Hadamard.H_isHadamard"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "config.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "manual"
+      framework: "Human direction and review"
+      prompting_notes: >-
+        Paul Lezeau selected the source, set the proof and trust requirements,
+        directed the structured redesign, and reviewed the result iteratively.
+    - method: "agent"
+      models: ["gpt-5.6-sol"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Interactive Lean sessions with Mathlib, exact Python audits, and
+        leanprover/comparator. Two isolated Codex workers handled the integer
+        certificate and real-matrix bridge before parent-session integration.
+      cost:
+        wall_time: >-
+          Intermittent work over 12-14 August 2026; active time was not recorded.
+        spend_usd: "Subscription-based usage; exact spend was not recorded."
+        hardware: >-
+          API-backed model and local Lean builds; an abandoned brute-force proof
+          attempt reached about 64 GB of memory.
+    - method: "agent"
+      models: ["gpt-5.6-sol"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        A separate adversarial-review session audited the source, axioms, 
+        Lean builds, and Comparator packaging.
+  spend_usd: "Subscription-based usage; exact spend was not recorded."
+  notes: >-
+    Codex produced the Lean development under iterative human direction. The
+    source separately credits Claude for the mathematical construction; Claude
+    did not create this Lean formalization.
+
+fidelity:
+  divergences: >-
+    The proof transforms the announcement's four cyclic sequences in ways that
+    preserve their correlations, then uses a different Wallis-Whiteman block
+    array. It proves the same existence result but not equivalence with the exact
+    posted matrix.
+
+review:
+  status: "agent-reviewed"
+  reviewers:
+    - "OpenAI Codex (gpt-5.6-sol)"
+  notes: >-
+    Separate Codex review included exact arithmetic checks, Lean builds, axiom
+    inspection, and Comparator. No human peer or source-author review is claimed.
+
+acknowledgements: >-
+  Uses Lean, Mathlib, and leanprover/comparator. The source credits Levent Alpöge,
+  Philippe Voinov, Saul Reynolds-Haertle, and Claude for the construction.
