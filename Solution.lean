@@ -554,4 +554,8 @@ theorem H_isHadamard : H.IsHadamard := by
     · norm_num [isRegular_iff_ne_zero']
   simpa using htranspose.transpose
 
+theorem exists_hadamard_668 : ∃ (H : Matrix (Fin 668) (Fin 668) ℤ), H.IsHadamard := by
+  use H
+  exact H_isHadamard
+
 end Hadamard

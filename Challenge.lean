@@ -79,4 +79,7 @@ def H : Matrix (Fin 668) (Fin 668) ℤ :=
 theorem H_isHadamard : H.IsHadamard := by
   sorry
 
+theorem exists_hadamard_668 : ∃ (H : Matrix (Fin 668) (Fin 668) ℤ), H.IsHadamard := by
+  sorry
+
 end Hadamard
